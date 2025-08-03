@@ -77,11 +77,12 @@ function gameOver() {
     gameSeq = [];
     userSeq = [];
     p.innerHTML = `<b>GAME OVER!</b><br>Your score is ${score}<br>Press any key to start again`;
-    document.addEventListener("dblclick", function () {
+    document.addEventListener("dblclick", function () { //
         if (started == false) {
             started = true;
             levelUp();
         }
     });
 }
+
 
