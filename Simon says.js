@@ -5,6 +5,7 @@ let started = false;
 let level = 0;
 let score = 0;
 let p = document.querySelector("p");
+let winLoss = document.querySelector("body");
 //start by keypress
 document.addEventListener("keypress", function () {
     //agar pehle start nhi tha to aab start karo
@@ -29,6 +30,10 @@ function correct() {
         if (userSeq[i] !== gameSeq[i]) {
             console.log("userSeq", userSeq);
             console.log("game over");
+            winLoss.style.backgroundColor = "red";
+            setTimeout(() => {
+                winLoss.style.backgroundColor = "white";
+            }, 200);
             gameOver();
             return;
         }
@@ -38,6 +43,10 @@ function correct() {
         console.log("Level++");
         userSeq = [];
         score++;
+        winLoss.style.backgroundColor = "green";
+        setTimeout(() => {
+            winLoss.style.backgroundColor = "white";
+        }, 200);
         levelUp();
     }
 }
@@ -76,13 +85,11 @@ function gameOver() {
     started = false;
     gameSeq = [];
     userSeq = [];
-    p.innerHTML = `<b>GAME OVER!</b><br>Your score is ${score}<br>Press any key to start again`;
-    document.addEventListener("dblclick", function () { //
+    p.innerHTML = `<b>GAME OVER!</b><br>Your score is ${score}<br>Double click to start again`;
+    document.addEventListener("dblclick", function () {
         if (started == false) {
             started = true;
             levelUp();
         }
     });
 }
-
-
