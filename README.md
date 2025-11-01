@@ -22,4 +22,4 @@ Repeat the color sequence correctly to level up — each round gets trickier! <b
 
 ### 📚 Learning Goal <br>  
 Made this project to practice **DOM manipulation + game logic in JS**. <br>  
-Purely educational, not for commercial use. <br>  
+Purely educational. <br>  
